@@ -1,15 +1,9 @@
-.div1{
-    height: 30px;
-    width: 600px;
-    padding: 0;
-    margin: o;
-    background-color: grey;
-}
-
-#table1{
+.nav {
+    text-decoration: underline;
     text-align: center;
-    font-size: 15pt;
-    font-family: Arial;
-    width: 600px;
-    color: white;
+    background-color: yellow;
+    color: red;
+    padding: 25px;
+    font-weight: 1000;
+    font-size: 30px;
 }
