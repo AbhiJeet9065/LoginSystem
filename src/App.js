@@ -109,5 +109,6 @@ export default class App extends Component {
             Continue with Facebook
         </div>  
     </div>
-    }
+    </div>
+    )}
     }
