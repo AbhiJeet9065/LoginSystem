@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import './App.css';
 
 export default class App extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +13,31 @@ export default class App extends Component {
   }
 
   checkValidEmail=()=>{
-    console.log("checking Email")  }
+    //console.log("checking Email", this.state.email) 
+    if(this.state.email.endsWith("@gmail.com")){
+      console.log("valid email")
+    }else{
+      console.log("invalid email")
+      this.setState({'emailError': 'Invalid Email Id'})
+    }
+  }
+
+  onEmailChange=(event)=>{
+    //console.log(event.target.value)  
+    this.setState({email:event.target.value})
+  }
+
+  onMobileChange=(event)=>{
+    //console.log(event.target.value)
+    this.setState({phone : event.target.value})
+  }
+
+  checkValidMobile=()=>{
+    console.log("Checking valid mobile", this.state.phone)
+    if(this.state.phone.length != 10){
+        this.setState({phoneError :  'Invalid phone number'})
+    }
+  }
 
   onEmailChange=()=>{
     this.setState({
@@ -31,16 +56,34 @@ export default class App extends Component {
             Create an account
       </div>
       <div class="third">or sign in to your account</div>
+        <div class="phone">
+            Phone number
+            <div class="phone-input">
+              <input type="text" placeholder="Mobile"
+              onChange={this.onMobileChange}
+              onBlur={this.checkValidMobile}
+              ></input>
+            </div>
+            <div class="email-error">
+            {this.state.phoneError}
+        </div>
+        </div>
         <div class="fourth">
                   Email
                   <div class="moc">
-                  <input type="text" class="form-control" placeholder="Email
+                  <input type="text" class="form-control" placeholder="Email"
                   onChange={this.onEmailChange}
                   onBlur={this.checkValidEmail}
+                  onChange={this.onEmailChange}
+                  value={this.state.email}
                   >
                     </input></div>
         </div>
-        <div class="fifth
+        <div class="email-error">
+            {this.state.emailError}
+        </div>
+
+      <div class="fifth">
             Password
               div class="doc">
                 <input type="text" class="form-control" placeholder="Password"></input>
@@ -67,4 +110,4 @@ export default class App extends Component {
         </div>  
     </div>
     }
-    {'}'}
+    }
