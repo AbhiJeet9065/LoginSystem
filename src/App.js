@@ -18,7 +18,7 @@ export default class App extends Component {
       console.log("valid email")
     }else{
       console.log("invalid email")
-      this.setState({'emailError': '*Invalid Email Invalid'})
+      this.setState({'emailError': '*Invalid Email address'})
     }
   }
 
