@@ -8,7 +8,7 @@ export default class App extends Component {
     super(props);
     this.state = {
         status : 0
-        ,email: "''"
+        ,email: ""
     };
   }
 
@@ -18,7 +18,7 @@ export default class App extends Component {
       console.log("valid email")
     }else{
       console.log("invalid email")
-      this.setState({'emailError': 'Invalid Email Id'})
+      this.setState({'emailError': '*Invalid Email Invalid'})
     }
   }
 
@@ -33,18 +33,18 @@ export default class App extends Component {
   }
 
   checkValidMobile=()=>{
-    console.log("Checking valid mobile", this.state.phone)
+    //console.log("Checking valid mobile", this.state.phone)
     if(this.state.phone.length != 10){
-        this.setState({phoneError :  'Invalid phone number'})
+        this.setState({'phoneError' :  '*Invalid phone number'})
     }
   }
 
-  onEmailChange=()=>{
-    this.setState({
-      "email":email
-    })
+  onPasswordChange=(event)=>{
+    //console.log(event.target.value)
+    this.setState({password : event.target.value})
   }
 
+  
 
   render(){
   return (
@@ -57,14 +57,14 @@ export default class App extends Component {
       </div>
       <div class="third">or sign in to your account</div>
         <div class="phone">
-            Phone number
+            Phone Number
             <div class="phone-input">
               <input type="text" placeholder="Mobile"
               onChange={this.onMobileChange}
               onBlur={this.checkValidMobile}
               ></input>
             </div>
-            <div class="email-error">
+            <div class="phone-error">
             {this.state.phoneError}
         </div>
         </div>
@@ -74,26 +74,22 @@ export default class App extends Component {
                   <input type="text" class="form-control" placeholder="Email"
                   onChange={this.onEmailChange}
                   onBlur={this.checkValidEmail}
-                  onChange={this.onEmailChange}
                   value={this.state.email}
-                  >
-                    </input></div>
-        </div>
+                  ></input>
+                  </div>
         <div class="email-error">
             {this.state.emailError}
         </div>
-
-      <div class="fifth">
+        <div class="fifth">
             Password
-              div class="doc">
-                <input type="text" class="form-control" placeholder="Password"></input>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/></svg>
-              <div>
+            <div class="doc"> 
+                <input type="password" class="form-control" placeholder="Password" id="password"
+                onClick="onPasswordClick()"
+                ></input>
+            </div>
         </div>
         <div class="sixth">
-            Continue with email
+          Continue with email
         </div>
         <div class="seventh"><h1>or</h1></div>
         <div class="eighth">
