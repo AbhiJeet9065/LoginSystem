@@ -44,6 +44,11 @@ export default class Login extends Component {
     this.setState({password : event.target.value})
   }
 
+  onPasswordClick=(event)=>{
+    console.log(event.target.value)
+    this.setState({password : event.target.value})
+  }
+
   
 
   render(){
@@ -84,7 +89,7 @@ export default class Login extends Component {
             Password
             <div class="doc"> 
                 <input type="password" class="form-control" placeholder="Password" id="password"
-                onClick="onPasswordClick()"
+                onClick={this.passwordclick}
                 ></input>
             </div>
         </div>
