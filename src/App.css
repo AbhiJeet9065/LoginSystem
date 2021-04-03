@@ -88,3 +88,45 @@ h1:after {
   font-size: 13px;
   padding: 15px;
 }
+
+.opp {
+  padding: 15px;
+  font-size: small;
+}
+.icons-list {
+  padding: 15px;
+}
+.message {
+  padding: 15px;
+}
+.Active {
+  padding: 15px;
+}
+.delete {
+  padding: 15px;
+}
+.set {
+  padding: 15px;
+  font-size: small;
+}
+.Refer {
+  padding: 15px;
+}
+.view {
+  padding: 15px;
+}
+.edit {
+  padding: 15px;
+}
+.account {
+  padding: 15px;
+}
+.sign {
+  padding: 15px;
+}
+img.profile-image.rounded-circle {
+  padding: 15px;
+}
+img.profile-image.rounded-circle {
+  padding: 15px;
+}
